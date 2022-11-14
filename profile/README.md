@@ -74,7 +74,11 @@ D --> E(("¡Todo listo!"))
 
 ## Base de datos (Sistema institucional) 🏫
 
+![sistemainst](https://user-images.githubusercontent.com/61607058/201577941-17f26371-b71c-4f97-bfaf-62927aa9508f.png)
+
 ## Base de datos (Sistema de bancos) 🏦
+
+![sistemabanc](https://user-images.githubusercontent.com/61607058/201578060-f189e396-9bbc-41ec-b34d-715b14b12fc0.png)
 
 ## API Gateway 🚚
 
@@ -125,6 +129,62 @@ En este json se registra la cantidad de instancias por servicios que se tienen a
 ## Servicio de autorización 🔒
 
 ## Servicio de consulta de saldos 💸
+
+---
+
+### **Consultar credito de tarjeta**
+* **URL**
+
+  _/credito-tarjeta-:numero_
+
+* **Method:**
+  `GET`
+  
+*  **URL Params**
+
+   **Required:**
+ 
+   `numero=[integer]`
+
+* **Success Response:**
+
+  * **Code:** 200 <br />
+    **Content:** `{ credito : 50000 }`
+  * **Code:** 200 <br />
+    **Content:** `Consultas deshabilitadas`
+ 
+* **Error Response:**
+  * **Code:** 
+    **Content:** `{ error : ... }`
+---
+
+---
+
+### **Consultar saldo de cuenta**
+* **URL**
+
+  _/saldo-cuenta-:numero_
+
+* **Method:**
+  `GET`
+  
+*  **URL Params**
+
+   **Required:**
+ 
+   `numero=[integer]`
+
+* **Success Response:**
+
+  * **Code:** 200 <br />
+    **Content:** `{ credito : 50000 }`
+  * **Code:** 200 <br />
+    **Content:** `Consultas deshabilitadas`
+ 
+* **Error Response:**
+  * **Code:** 
+    **Content:** `{ error : ... }`
+---
 
 ## API de bancos 🏧
 

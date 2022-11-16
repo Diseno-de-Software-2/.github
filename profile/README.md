@@ -30,7 +30,7 @@ D --> E(("¡Todo listo!"))
 
 ## Requisitos 📅
 
-- [ ] Debe disponer de una pantalla para capturar los datos de la transacción a efectuar.
+- [x] Debe disponer de una pantalla para capturar los datos de la transacción a efectuar.
 
 - [ ] Se debe validar saldos.
 
@@ -40,26 +40,26 @@ D --> E(("¡Todo listo!"))
 
 - [ ] Cuando el cliente no tenga el medio de pago activo, se debe informar y no permitir la transacción. 
 
-- [ ] Los medios de pago deben existir para quien intenta comprar. Es decir, las tarjetas de crédito o medios de pagos deben existir.
+- [x] Los medios de pago deben existir para quien intenta comprar. Es decir, las tarjetas de crédito o medios de pagos deben existir.
 
-- [ ] Validar que la transacción de descuento se efectué así la aplicación base no esté disponible. Webhook.
+- [x] Validar que la transacción de descuento se efectué así la aplicación base no esté disponible. Webhook.
 
 - [ ] Validar que el valor a pagar sea mayor que cero.
 
 - [ ] La solución debe contar con alta disponibilidad, para que, si un nodo no está disponible, otro pueda responder.
 
-- [ ] Implementar consulta de saldo en el medio de pago. Antes de comprar existirá una opción para que el cliente pueda consultar el saldo de todas sus tarjetas débito o crédito (Composición). Esta opción podrá deshabilitarse en algún momento y aun así podrá realizarse una transacción de pago.
+- [x] Implementar consulta de saldo en el medio de pago. Antes de comprar existirá una opción para que el cliente pueda consultar el saldo de todas sus tarjetas débito o crédito (Composición). Esta opción podrá deshabilitarse en algún momento y aun así podrá realizarse una transacción de pago.
 
-- [ ] Los datos básicos a capturar son: nombre completo, email e identificación del comprador, concepto de pago, sede, monto a comprar, medio de pago, incluido franquicia, nro de cuotas cuando aplica. La fecha, hora y número de transacción son generados por el sistema.
+- [x] Los datos básicos a capturar son: nombre completo, email e identificación del comprador, concepto de pago, sede, monto a comprar, medio de pago, incluido franquicia, nro de cuotas cuando aplica. La fecha, hora y número de transacción son generados por el sistema.
 
-- [ ] El sistema debe mostrar la cliente el resultado de la transacción sea exitoso o no.
+- [x] El sistema debe mostrar la cliente el resultado de la transacción sea exitoso o no.
 
 - [ ] Se debe contar con un registro de transacciones exitosas o no.
 
 - [ ] La solución debe manejar la disponibilidad del servicio de consulta o compra, es decir debe mostrar mensajes controlados si estos servicios no están disponibles. 
 (Circuit Breaker)
 
-- [ ] Se debe aplicar el mejor estilo arquitectural que permita: cohesión, encapsulamiento, bajo acoplamiento, interdependencia al máximo nivel posible.
+- [x] Se debe aplicar el mejor estilo arquitectural que permita: cohesión, encapsulamiento, bajo acoplamiento, interdependencia al máximo nivel posible.
 
 - [ ] Es un mismo momento es posible que uno de los bancos no tenga activos los servicios de consulta y/o compra o retiro, esto debe validarse.
 
@@ -80,45 +80,7 @@ D --> E(("¡Todo listo!"))
 
 ![sistemabanc](https://user-images.githubusercontent.com/61607058/201578060-f189e396-9bbc-41ec-b34d-715b14b12fc0.png)
 
-## API Gateway 🚚
-
-### Registry json
-
-En este json se registra la cantidad de instancias por servicios que se tienen activas y si estas están activas o inactivas
-
-```json
-
-{
-  "services": {
-    "auth": {
-      "loadBalancerStrategy": "ROUND_ROBIN",
-      "index": 0,
-      "instances": []
-    },
-    "query": {
-      "loadBalancerStrategy": "ROUND_ROBIN",
-      "index": 0,
-      "instances": []
-    },
-    "account": {
-      "loadBalancerStrategy": "ROUND_ROBIN",
-      "index": 0,
-      "instances": []
-    },
-    "balance": {
-      "loadBalancerStrategy": "ROUND_ROBIN",
-      "index": 0,
-      "instances": []
-    },
-    "pay": {
-      "loadBalancerStrategy": "ROUND_ROBIN",
-      "index": 0,
-      "instances": []
-    }
-  }
-}
-
-```
+## API Gateway 🚚 ([Documentación](https://github.com/Diseno-de-Software-2/API-Gateway-EduPay#readme))
 
 ## Servicio de consultas ❔
 
@@ -128,63 +90,7 @@ En este json se registra la cantidad de instancias por servicios que se tienen a
 
 ## Servicio de autorización 🔒
 
-## Servicio de consulta de saldos 💸
-
----
-
-### **Consultar credito de tarjeta**
-* **URL**
-
-  _/credito-tarjeta-:numero_
-
-* **Method:**
-  `GET`
-  
-*  **URL Params**
-
-   **Required:**
- 
-   `numero=[integer]`
-
-* **Success Response:**
-
-  * **Code:** 200 <br />
-    **Content:** `{ credito : 50000 }`
-  * **Code:** 200 <br />
-    **Content:** `Consultas deshabilitadas`
- 
-* **Error Response:**
-  * **Code:** 
-    **Content:** `{ error : ... }`
----
-
----
-
-### **Consultar saldo de cuenta**
-* **URL**
-
-  _/saldo-cuenta-:numero_
-
-* **Method:**
-  `GET`
-  
-*  **URL Params**
-
-   **Required:**
- 
-   `numero=[integer]`
-
-* **Success Response:**
-
-  * **Code:** 200 <br />
-    **Content:** `{ credito : 50000 }`
-  * **Code:** 200 <br />
-    **Content:** `Consultas deshabilitadas`
- 
-* **Error Response:**
-  * **Code:** 
-    **Content:** `{ error : ... }`
----
+## Servicio de consulta de saldos 💸  ([Documentación](https://github.com/Diseno-de-Software-2/Balance-API-EduPay#readme))
 
 ## API de bancos 🏧
 

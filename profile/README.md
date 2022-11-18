@@ -16,7 +16,7 @@ A(Instalar MySql) -->B(Usar usuario: root y constraseña: root)
 <h3 align="center"> Tu carpeta debería verse así </h3>
 <div align="center">
   
-![Screenshot 2022-11-13 231357](https://user-images.githubusercontent.com/61607058/201573894-4e5d5d17-1f04-4fd2-ac9a-527af7ef3beb.png)
+![archivos](https://user-images.githubusercontent.com/61607058/202647601-6d501a48-f3ca-4769-8c1d-82833b855e86.png)
 
 </div>
   

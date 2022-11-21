@@ -10,13 +10,14 @@ graph TD
 A(Instalar MySql) -->B(Usar usuario: root y constraseña: root)
     B --> C(Montar las bases de datos - Repositorio: DataBases - EduPay)
     C --> D(Descargar todos los repositorios de APIs en una misma carpeta)
-    D --> E(Descargar las dependencias en cada carpeta usando: npm install)
-    E --> F(Tomar los archivos de To_Build y sacarlos a la carpeta padre)
+    D --> E(Tomar los archivos de To_Build y sacarlos a la carpeta padre)
+    E --> F(Descargar las dependencias en cada carpeta usando el ejecutable npm_install.cmd)
+    F --> G(Poner tus credenciales de la base de datos en db_credentials.js)
 ```
 <h3 align="center"> Tu carpeta debería verse así </h3>
 <div align="center">
   
-![archivos](https://user-images.githubusercontent.com/61607058/202647601-6d501a48-f3ca-4769-8c1d-82833b855e86.png)
+![image](https://user-images.githubusercontent.com/61607058/203145131-634c558d-ef94-499f-9ba7-daeb772ec609.png)
 
 </div>
   

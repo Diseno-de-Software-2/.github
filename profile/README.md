@@ -29,46 +29,6 @@ C --> D(Poner el url en el navegador)
 D --> E(("¡Todo listo!"))
 ```
 
-## Requisitos 📅
-
-- [x] Debe disponer de una pantalla para capturar los datos de la transacción a efectuar.
-
-- [ ] Se debe validar saldos.
-
-- [ ] Se debe validar tipos de tarjetas de crédito (solo Visa, Mastercard y American Express). Para el caso del trabajo un cliente solo podrá tener tarjetas de dos bancos: el East Bank y el Western Bank.
-
-- [ ] Posibilidad de pagar con tarjeta debido y o crédito. Cuando se refieran al pago con tarjeta débito se referirán al pago con PSE.
-
-- [ ] Cuando el cliente no tenga el medio de pago activo, se debe informar y no permitir la transacción. 
-
-- [x] Los medios de pago deben existir para quien intenta comprar. Es decir, las tarjetas de crédito o medios de pagos deben existir.
-
-- [x] Validar que la transacción de descuento se efectué así la aplicación base no esté disponible. Webhook.
-
-- [ ] Validar que el valor a pagar sea mayor que cero.
-
-- [ ] La solución debe contar con alta disponibilidad, para que, si un nodo no está disponible, otro pueda responder.
-
-- [x] Implementar consulta de saldo en el medio de pago. Antes de comprar existirá una opción para que el cliente pueda consultar el saldo de todas sus tarjetas débito o crédito (Composición). Esta opción podrá deshabilitarse en algún momento y aun así podrá realizarse una transacción de pago.
-
-- [x] Los datos básicos a capturar son: nombre completo, email e identificación del comprador, concepto de pago, sede, monto a comprar, medio de pago, incluido franquicia, nro de cuotas cuando aplica. La fecha, hora y número de transacción son generados por el sistema.
-
-- [x] El sistema debe mostrar la cliente el resultado de la transacción sea exitoso o no.
-
-- [ ] Se debe contar con un registro de transacciones exitosas o no.
-
-- [ ] La solución debe manejar la disponibilidad del servicio de consulta o compra, es decir debe mostrar mensajes controlados si estos servicios no están disponibles. 
-(Circuit Breaker)
-
-- [x] Se debe aplicar el mejor estilo arquitectural que permita: cohesión, encapsulamiento, bajo acoplamiento, interdependencia al máximo nivel posible.
-
-- [ ] Es un mismo momento es posible que uno de los bancos no tenga activos los servicios de consulta y/o compra o retiro, esto debe validarse.
-
-- [ ] La interfaz de las tablas de parámetros no es necesario que se construyan, los datos de parámetros se pueden ingresar por base de datos, pero sí se deben elaborar los bocetos de estas interfaces.
-
-- [ ] La solución debe contar con ayudas para orientar el usuario en caso de dudas.
-
-
 ## Arquitectura 🌐
 
 ![Diagrama de despliegue - Página 1](https://user-images.githubusercontent.com/61607058/201572704-8441ee21-7604-4ed8-af1c-35bb828ee010.png)
